@@ -2,7 +2,8 @@ name: Run tests
 
 on:
   push:
-    branches: [config/ci]
+    branches: 
+      - config/ci
 
 jobs:
   pytest:
@@ -47,7 +48,7 @@ jobs:
       run: |
         pytest app/modules/ --ignore-glob='*selenium*'
 
-        
+
   outdated_dependencies:
     steps:
     - name: Check for outdated dependencies
